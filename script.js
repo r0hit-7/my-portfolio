@@ -12,14 +12,14 @@ toggleBtn.addEventListener('click', () => {
   toggleBtn.innerHTML = newTheme === 'light' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 });
 
-// Contact Form
+// Contact Form (Neeche Wala)
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  alert('Message sent! (Demo - Real mein Formspree add karo)');
+  alert('Message sent! Thanks for reaching out, Rohit. (Demo - Real mein Formspree add karo)');
   e.target.reset();
 });
 
-// To-Do App (Pehle wala same rakh lo, yeh add karo if needed)
+// To-Do App Function (Todo Page Ke Liye)
 function addTask() {
   let task = document.getElementById("task").value;
   if (task === "") return;
