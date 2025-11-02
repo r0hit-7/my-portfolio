@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coffee + View — You only need the drive. Stunning mountain view café. Open today for brunch, coffee, and unforgettable sunsets.">
+  <title>Mountain View Café | Coffee + View</title>
+  
+  <!-- TailwindCSS via CDN for fast styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS for hero image optimization -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #d97706;
+      --primary-dark: #b45309;
+      --accent: #f59e0b;
+      --text-dark: #1f2937;
+      --text-light: #6b7280;
+      --bg-cream: #fffbeb;
+      --success: #10b981;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+    
+    .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* Hero image - placeholder for real mountain view photo */
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 248, 220, 0.95) 0%, rgba(250, 204, 21, 0.95) 100%);
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(217, 119, 6, 0.1) 0%, transparent 50%);
+      z-index: -1;
+    }
+    
+    .hero-image::before {
+      content: '🏔️';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12rem;
+      opacity: 0.1;
+    }
+    
+    /* Pulse animation for open indicator */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    /* Smooth transitions */
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+    
+    /* Hover effects */
+    .hover-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Sticky CTA bar */
+    .sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Responsive image placeholders */
+    .image-placeholder {
+      background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    
+    /* Google Maps review card */
+    .review-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .stars {
+      color: #fbbf24;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+    }
+    
+    /* Loading optimization */
+    .lazy-load {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .lazy-load.loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  
+  <!-- HERO SECTION - "I want to sit there" moment -->
+  <section class="relative min-h-screen flex items-center justify-center px-4 py-20">
+    <div class="hero-image"></div>
+    
+    <div class="relative z-10 text-center max-w-4xl mx-auto">
+      <h1 class="font-display text-6xl md:text-8xl font-bold text-white mb-4 drop-shadow-lg">
+        Mountain View Café
+      </h1>
+      <p class="text-2xl md:text-4xl font-semibold text-yellow-50 mb-6 drop-shadow-md">
+        coffee + view — you only need the drive
+      </p>
+      
+      <!-- Primary CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a href="https://maps.apple.com/?daddr=37.7749,-122.4194" 
+           class="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 hover-lift transition-all shadow-xl">
+          <i class="fas fa-map-marker-alt"></i>
+          Get Directions
+        </a>
+        <a href="tel:+14155551234" 
+           class="bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-2 hover-lift transition-all shadow-xl border-2 border-white">
+          <i class="fas fa-phone"></i>
+          Call to Reserve Table
+        </a>
+      </div>
+      
+      <!-- Status indicator -->
+      <p class="text-white text-lg flex items-center justify-center gap-2">
+        <span class="bg-green-500 w-3 h-3 rounded-full pulse"></span>
+        <span id="hours-status">Open today 8 AM - 8 PM</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- MICRO MENU - 6-9 signature items -->
+  <section class="py-20 px-4 bg-cream">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-2">Our Signature Menu</h2>
+        <p class="text-xl text-gray-600">chef favorites • most ordered • traveler approved</p>
+      </div>
+      
+      <!-- 3 columns desktop, 2 mobile -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        
+        <!-- Menu Item 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-md hover-lift transition-all">
+          <div class="image-placeholder rounded-lg mb-4 h-40">
+            <span>☕</span>
+          </div>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-xl">Espresso Mountain Mocha</h3>
+            <span class="text-orange-600 font-bold text-xl">$6.50</span>
+          </div>
+          <p class="text-gray-600 text-sm">Rich espresso + melted mountain chocolate</p>
+        </div>
+
+        <!-- Menu Item 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-md hover-lift transition-all">
+          <div class="image-placeholder rounded-lg mb-4 h-40">
+            <span>🥐</span>
+          </div>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-xl">Fresh Croissant</h3>
+            <span class="text-orange-600 font-bold text-xl">$4.50</span>
+          </div>
+          <p class="text-gray-600 text-sm">Buttery, flaky, baked daily</p>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-md hover-lift transition-all">
+          <div class="image-placeholder rounded-lg mb-4 h-40">
+            <span>🥑</span>
+          </div>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-xl">Avocado Toast</h3>
+            <span class="text-orange-600 font-bold text-xl">$12.00</span>
+          </div>
+          <p class="text-gray-600 text-sm">Smashed avo, poached egg, sourdough</p>
+        </div>
+
+        <!-- Menu Item 4 -->
+        <div class="bg-white rounded-xl p-6 shadow-md hover-lift transition-all">
+          <div class="image-placeholder rounded-lg mb-4 h-40">
+            <span>🧇</span>
+          </div>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-xl">Belgian Waffle</h3>
+            <span class="text-orange-600 font-bold text-xl">$10.50</span>
+          </div>
+          <p class="text-gray-600 text-sm">Maple syrup, berries, whipped cream</p>
+        </div>
+
+        <!-- Menu Item 5 -->
+        <div class="bg-white rounded-xl p-6 shadow-md hover-lift transition-all">
+          <div class="image-placeholder rounded-lg mb-4 h-40">
+            <span>🍵</span>
+          </div>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-xl">Himalayan Chai</h3>
+            <span class="text-orange-600 font-bold text-xl">$5.00</span>
+          </div>
+          <p class="text-gray-600 text-sm">Traditional mountain spices</p>
+        </div>
+
+        <!-- Menu Item 6 -->
+        <div class="bg-white rounded-xl p-6 shadow-md hover-lift transition-all">
+          <div class="image-placeholder rounded-lg mb-4 h-40">
+            <span>🥪</span>
+          </div>
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-xl">Sunrise Panini</h3>
+            <span class="text-orange-600 font-bold text-xl">$13.50</span>
+          </div>
+          <p class="text-gray-600 text-sm">Prosciutto, mozzarella, fresh basil</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIBE SECTION - 3 photos social proof visual -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-2">The Experience</h2>
+        <p class="text-xl text-gray-600">see why travelers stop here</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Vibe Photo 1 - Inside View -->
+        <div class="bg-gradient-to-br from-amber-100 to-orange-200 rounded-xl overflow-hidden hover-lift transition-all shadow-lg">
+          <div class="image-placeholder h-64">
+            <span class="text-7xl">🪟</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Window Seats</h3>
+            <p class="text-gray-600">Floor-to-ceiling views while you dine</p>
+          </div>
+        </div>
+
+        <!-- Vibe Photo 2 - Mountain View -->
+        <div class="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-xl overflow-hidden hover-lift transition-all shadow-lg">
+          <div class="image-placeholder h-64">
+            <span class="text-7xl">⛰️</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Panoramic Views</h3>
+            <p class="text-gray-600">Mountains meet your coffee cup</p>
+          </div>
+        </div>
+
+        <!-- Vibe Photo 3 - Outdoor Seating -->
+        <div class="bg-gradient-to-br from-green-100 to-emerald-200 rounded-xl overflow-hidden hover-lift transition-all shadow-lg">
+          <div class="image-placeholder h-64">
+            <span class="text-7xl">🌲</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Outdoor Patio</h3>
+            <p class="text-gray-600">Al fresco seating when weather permits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF - 3 Google Maps reviews -->
+  <section class="py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-2">What Travelers Say</h2>
+        <p class="text-xl text-gray-600">real reviews from google maps</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="review-card hover-lift transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <div class="stars">★★★★★</div>
+            <span class="text-xs text-gray-500 uppercase">Google Review</span>
+          </div>
+          <p class="text-gray-700 italic mb-4">"Worth the drive! Best view I've seen from a café. The espresso was perfect and the croissant was warm and buttery. Already planning my next visit."</p>
+          <div class="flex flex-col">
+            <span class="font-bold">Sarah M.</span>
+            <span class="text-xs text-gray-500">Verified Visit • 2 weeks ago</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card hover-lift transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <div class="stars">★★★★★</div>
+            <span class="text-xs text-gray-500 uppercase">Google Review</span>
+          </div>
+          <p class="text-gray-700 italic mb-4">"Stopped here on our road trip and fell in love. The mountain view is absolutely breathtaking. Staff was super friendly. Come hungry—the avocado toast is massive!"</p>
+          <div class="flex flex-col">
+            <span class="font-bold">Mike & Emma</span>
+            <span class="text-xs text-gray-500">Verified Visit • 1 month ago</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card hover-lift transition-all">
+          <div class="flex justify-between items-center mb-3">
+            <div class="stars">★★★★★</div>
+            <span class="text-xs text-gray-500 uppercase">Google Review</span>
+          </div>
+          <p class="text-gray-700 italic mb-4">"This café is a hidden gem. The vibe is perfect for both remote work and unwinding. Food quality is top-notch. Don't miss the sunset!"</p>
+          <div class="flex flex-col">
+            <span class="font-bold">Jessica L.</span>
+            <span class="text-xs text-gray-500">Verified Visit • 3 days ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION BLOCK - Map embed + Open in Maps -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-4xl md:text-5xl font-bold mb-2">Find Us</h2>
+        <p class="text-xl text-gray-600">one tap to navigate here</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Map embed placeholder -->
+        <div class="bg-gray-200 rounded-xl overflow-hidden shadow-lg" style="aspect-ratio: 4/3;">
+          <div class="w-full h-full flex flex-col items-center justify-center">
+            <div class="text-6xl mb-4">🗺️</div>
+            <p class="text-xl font-bold text-gray-700 mb-4">Mountain Vista Road</p>
+            <p class="text-gray-600 mb-6">Elevation 8,500 ft</p>
+            <a href="https://maps.apple.com/?daddr=37.7749,-122.4194" 
+               class="bg-orange-600 text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover-lift transition-all">
+              <i class="fas fa-directions"></i>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+        
+        <!-- Info -->
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="text-3xl">📍</div>
+            <div>
+              <h3 class="font-bold text-xl mb-1">Address</h3>
+              <p class="text-gray-600 mb-2">Mountain Vista Road<br>Scenic Route Highway 101</p>
+              <a href="https://maps.apple.com/?daddr=37.7749,-122.4194" class="text-orange-600 font-bold text-sm">
+                Get Directions →
+              </a>
+            </div>
+          </div>
+          
+          <div class="flex gap-4">
+            <div class="text-3xl">🕐</div>
+            <div>
+              <h3 class="font-bold text-xl mb-1">Hours Today</h3>
+              <p class="text-gray-600 mb-2" id="today-hours">
+                <!-- Dynamic hours injected by JS -->
+              </p>
+              <p class="text-green-600 font-bold text-sm" id="open-now-status">
+                <!-- Dynamic status -->
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex gap-4">
+            <div class="text-3xl">📞</div>
+            <div>
+              <h3 class="font-bold text-xl mb-1">Call Us</h3>
+              <p class="text-gray-600 mb-2">
+                <a href="tel:+14155551234" class="text-orange-600 font-bold hover:underline">+1 (415) 555-1234</a>
+              </p>
+              <a href="tel:+14155551234" class="text-orange-600 font-bold text-sm inline-block mt-2">
+                Tap to Call →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 px-4 bg-gradient-to-br from-orange-600 to-amber-600 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Ready to See the View?</h2>
+      <p class="text-2xl mb-8">one tap • instant directions • unforgettable experience</p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://maps.apple.com/?daddr=37.7749,-122.4194" 
+           class="bg-white text-orange-600 px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 hover-lift transition-all shadow-2xl">
+          <i class="fas fa-route text-2xl"></i>
+          Get Directions Now
+        </a>
+        <a href="tel:+14155551234" 
+           class="bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center gap-3 hover-lift transition-all">
+          <i class="fas fa-phone text-2xl"></i>
+          Call to Reserve
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-12 px-4">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="mb-8">
+        <h3 class="font-display text-3xl font-bold mb-2">Mountain View Café</h3>
+        <p class="text-gray-400">coffee + view — you only need the drive</p>
+      </div>
+      <div class="mb-8">
+        <a href="index.html" class="text-orange-400 hover:text-orange-300 font-semibold inline-flex items-center gap-2">
+          <i class="fas fa-arrow-left"></i>
+          Back to Portfolio
+        </a>
+      </div>
+      <p class="text-gray-500 text-sm">&copy; 2024 Mountain View Café. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for dynamic features -->
+  <script src="cafe-mvp.js"></script>
+</body>
+</html>

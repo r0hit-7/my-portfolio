@@ -28,6 +28,14 @@ Hi! I'm **Rohit Rawat**, a passionate CSE Student from Dehradun, India. I specia
 - Dark/Light theme toggle
 - Local storage persistence
 
+### 4. Mountain View Café MVP
+**Live:** [View Project](https://r0hit-7.github.io/my-portfolio/cafe-mvp.html)
+- Performance-optimized café landing page for travelers
+- Tagline: "coffee + view — you only need the drive"
+- Features: Hero image, micro menu, social proof, dynamic hours, instant navigation
+- Built with TailwindCSS for <2.5s load time
+- KPIs: Scroll depth tracking, CTA conversion monitoring
+
 ## Tech Stack
 
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+), React
@@ -98,16 +106,20 @@ my-portfolio/
 ├── index.html              # Main portfolio page
 ├── coach-landing.html      # Instagram coach landing page
 ├── restaurant.html         # Restaurant website
-├── todo.html              # Todo application
-├── style.css              # Portfolio styles
-├── coach-landing.css      # Coach page styles
-├── restaurant.css         # Restaurant styles
-├── todo.css               # Todo app styles
-├── script.js              # Portfolio JavaScript
-├── coach-landing.js       # Coach page JavaScript
-├── restaurant.js          # Restaurant JavaScript
-├── todo.js                # Todo app JavaScript
-└── README.md              # This file
+├── restaurant-mvp.html     # Restaurant MVP (fast booking page)
+├── cafe-mvp.html           # Café MVP (traveler-optimized)
+├── todo.html               # Todo application
+├── style.css               # Portfolio styles
+├── coach-landing.css       # Coach page styles
+├── restaurant.css          # Restaurant styles
+├── restaurant-mvp.css      # Restaurant MVP styles
+├── todo.css                # Todo app styles
+├── script.js               # Portfolio JavaScript
+├── coach-landing.js        # Coach page JavaScript
+├── restaurant.js           # Restaurant JavaScript
+├── cafe-mvp.js             # Café MVP JavaScript
+├── todo.js                 # Todo app JavaScript
+└── README.md               # This file
 ```
 
 ## Contributions
