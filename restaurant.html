@@ -1,22 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Spice Villa Restaurant</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Spice Villa - Authentic Indian Cuisine in Dehradun. Best Biryani, Thalis, and Traditional Dishes">
+  <title>Spice Villa - Authentic Indian Restaurant | Dehradun</title>
+  <link rel="stylesheet" href="restaurant.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>🍛 Spice Villa</h1>
-    <p>Best Biryani in Dehradun!</p>
-    <h3>Menu</h3>
-    <ul style="list-style: none; text-align: left; display: inline-block;">
-      <li>🍗 Chicken Biryani - ₹180</li>
-      <li>🥗 Veg Thali - ₹120</li>
-      <li>🥤 Cold Drink - ₹40</li>
-    </ul>
-    <p>📍 Rajpur Road, Dehradun</p>
-    <a href="index.html" class="btn">← Back</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-utensils"></i>
+        <span>Spice Villa</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html" class="back-link"><i class="fas fa-home"></i> Portfolio</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to <span class="highlight">Spice Villa</span></h1>
+      <p class="hero-subtitle">Authentic Indian Flavors • Traditional Recipes • Fresh Ingredients</p>
+      <p class="hero-tagline">Best Biryani in Dehradun! 🍛</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="#contact" class="btn btn-secondary">Order Now</a>
+      </div>
+      <div class="hero-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Rajpur Road, Dehradun</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <span>+91 8954531718</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-clock"></i>
+          <span>11 AM - 11 PM Daily</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialties Section -->
+  <section class="specialties">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Specialties</h2>
+        <p class="section-subtitle">Signature dishes that keep our customers coming back</p>
+      </div>
+      <div class="specialties-grid">
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <i class="fas fa-drumstick-bite"></i>
+          </div>
+          <h3>Chicken Biryani</h3>
+          <p>Fragrant basmati rice cooked with tender chicken, aromatic spices, and herbs</p>
+          <div class="price">₹180</div>
+        </div>
+        <div class="specialty-card featured">
+          <div class="badge">Chef's Choice</div>
+          <div class="specialty-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Veg Thali</h3>
+          <p>Complete vegetarian meal with dal, sabzi, rice, roti, salad, and dessert</p>
+          <div class="price">₹120</div>
+        </div>
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <i class="fas fa-glass-water"></i>
+          </div>
+          <h3>Cold Drinks</h3>
+          <p>Refreshing beverages to complement your meal</p>
+          <div class="price">₹40</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Menu</h2>
+        <p class="section-subtitle">Delicious dishes made with love and authentic spices</p>
+      </div>
+      <div class="menu-categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="biryani">Biryani</button>
+        <button class="category-btn" data-category="thali">Thalis</button>
+        <button class="category-btn" data-category="curries">Curries</button>
+        <button class="category-btn" data-category="beverages">Beverages</button>
+      </div>
+      <div class="menu-grid">
+        <!-- Biryani Items -->
+        <div class="menu-item" data-category="biryani">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Chicken Biryani</h3>
+              <span class="menu-price">₹180</span>
+            </div>
+            <p class="menu-description">Fragrant basmati rice layered with marinated chicken and aromatic spices</p>
+            <div class="menu-tags">
+              <span class="tag spicy"><i class="fas fa-pepper-hot"></i> Spicy</span>
+              <span class="tag popular">Popular</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <div class="menu-item" data-category="biryani">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Mutton Biryani</h3>
+              <span class="menu-price">₹220</span>
+            </div>
+            <p class="menu-description">Tender mutton pieces slow-cooked with premium basmati rice</p>
+            <div class="menu-tags">
+              <span class="tag spicy"><i class="fas fa-pepper-hot"></i> Spicy</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <div class="menu-item" data-category="biryani">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Veg Biryani</h3>
+              <span class="menu-price">₹150</span>
+            </div>
+            <p class="menu-description">Mixed vegetables and aromatic rice cooked with traditional spices</p>
+            <div class="menu-tags">
+              <span class="tag vegetarian">Vegetarian</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <!-- Thali Items -->
+        <div class="menu-item" data-category="thali">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Veg Thali</h3>
+              <span class="menu-price">₹120</span>
+            </div>
+            <p class="menu-description">Complete meal with dal, sabzi, rice, roti, salad, and dessert</p>
+            <div class="menu-tags">
+              <span class="tag vegetarian">Vegetarian</span>
+              <span class="tag popular">Popular</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <div class="menu-item" data-category="thali">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Non-Veg Thali</h3>
+              <span class="menu-price">₹200</span>
+            </div>
+            <p class="menu-description">Chicken curry, dal, rice, roti, salad, and dessert</p>
+            <div class="menu-tags">
+              <span class="tag spicy"><i class="fas fa-pepper-hot"></i> Spicy</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <!-- Curry Items -->
+        <div class="menu-item" data-category="curries">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Butter Chicken</h3>
+              <span class="menu-price">₹180</span>
+            </div>
+            <p class="menu-description">Creamy tomato-based curry with tender chicken pieces</p>
+            <div class="menu-tags">
+              <span class="tag popular">Popular</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <div class="menu-item" data-category="curries">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Dal Makhani</h3>
+              <span class="menu-price">₹120</span>
+            </div>
+            <p class="menu-description">Creamy black lentils cooked overnight with butter and cream</p>
+            <div class="menu-tags">
+              <span class="tag vegetarian">Vegetarian</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <div class="menu-item" data-category="curries">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Paneer Tikka Masala</h3>
+              <span class="menu-price">₹160</span>
+            </div>
+            <p class="menu-description">Grilled paneer cubes in rich, creamy tomato gravy</p>
+            <div class="menu-tags">
+              <span class="tag vegetarian">Vegetarian</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <!-- Beverage Items -->
+        <div class="menu-item" data-category="beverages">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Cold Drink</h3>
+              <span class="menu-price">₹40</span>
+            </div>
+            <p class="menu-description">Chilled soft drinks - Coke, Pepsi, Sprite, Fanta</p>
+            <div class="menu-tags">
+              <span class="tag vegetarian">Vegetarian</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <div class="menu-item" data-category="beverages">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Fresh Lime Soda</h3>
+              <span class="menu-price">₹50</span>
+            </div>
+            <p class="menu-description">Refreshing lime soda with mint and spices</p>
+            <div class="menu-tags">
+              <span class="tag vegetarian">Vegetarian</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+
+        <div class="menu-item" data-category="beverages">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>Lassi</h3>
+              <span class="menu-price">₹60</span>
+            </div>
+            <p class="menu-description">Sweet or salty yogurt drink - Plain, Mango, or Rose</p>
+            <div class="menu-tags">
+              <span class="tag vegetarian">Vegetarian</span>
+            </div>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">About Spice Villa</h2>
+          <p class="about-description">
+            Established with a passion for authentic Indian cuisine, Spice Villa has been serving 
+            the people of Dehradun for years. We take pride in using fresh, locally-sourced ingredients 
+            and traditional recipes passed down through generations.
+          </p>
+          <p class="about-description">
+            Our kitchen team is dedicated to creating flavorful dishes that bring families together 
+            and create lasting memories. From our signature biryanis to our hearty thalis, every dish 
+            is prepared with care and attention to detail.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Fresh Ingredients Daily</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Traditional Recipes</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Family-Friendly</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check-circle"></i>
+              <span>Affordable Prices</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="image-placeholder">
+            <i class="fas fa-utensils"></i>
+            <p>Authentic Indian Cuisine</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">Visit us or place an order today!</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Address</h3>
+            <p>Rajpur Road<br>Dehradun, Uttarakhand</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Phone</h3>
+            <p>+91 8954531718</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Hours</h3>
+            <p>Monday - Sunday<br>11:00 AM - 11:00 PM</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email</h3>
+            <p>rohitrawat8954531718@gmail.com</p>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm">
+            <h3>Place Your Order</h3>
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Your Order Details..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fas fa-paper-plane"></i> Submit Order
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-cart"></i> Your Order</h3>
+      <button class="close-cart" onclick="closeCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">Your cart is empty</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total: ₹<span id="cartTotal">0</span></span>
+      </div>
+      <button class="btn btn-primary btn-block" onclick="checkout()">Checkout</button>
+    </div>
   </div>
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+  <!-- Cart Button -->
+  <button class="cart-btn" id="cartButton" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-utensils"></i>
+            <span>Spice Villa</span>
+          </div>
+          <p>Authentic Indian cuisine in the heart of Dehradun. Experience flavors that bring families together.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Spice Villa. All rights reserved. | Made with ❤️ in Dehradun</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="restaurant.js"></script>
 </body>
 </html>
