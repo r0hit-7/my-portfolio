@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Placeholder Cafe</title>
+  <link rel="stylesheet" href="cafe2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;padding:24px 10px 32px 10px;max-width:900px;margin:0 auto;}
+    .gallery-grid img{width:100%;border-radius:10px;object-fit:cover;aspect-ratio:4/3;box-shadow:0 2px 14px #73604313;}
+    @media(max-width:600px){.gallery-grid{gap:9px;}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="cafe2.html" class="logo">Placeholder Cafe</a>
+  <ul class="nav-links">
+    <li><a href="cafe2-about.html">About</a></li>
+    <li><a href="cafe2-gallery.html">Gallery</a></li>
+    <li><a href="cafe2-menu.html">Menu</a></li>
+    <li><a href="cafe2-booking.html">Booking</a></li>
+    <li><a href="cafe2-contact.html">Contact</a></li>
+    <li><a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+</nav>
+<main>
+<section class="hero">
+  <h1>Gallery</h1>
+  <p>A glimpse into our space, our cups, and the things we love.</p>
+</section>
+<div class="gallery-grid">
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Minimal sunlight cafe terrace">
+  <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Modern cafe counter">
+  <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=900&q=80" alt="Coffee and pastry flatlay">
+  <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="Minimal latte art">
+  <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=900&q=80" alt="Cups, napkins and beans">
+</div>
+</main>
+<footer>
+  <span>&copy; 2025 Placeholder Cafe</span>
+  <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-footer"><i class="fab fa-instagram"></i></a>
+</footer>
+</body>
+</html>

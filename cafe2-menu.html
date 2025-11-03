@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Placeholder Cafe</title>
+  <link rel="stylesheet" href="cafe2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:540px;margin:0 auto;padding:23px 9px;}
+    .menu-item{padding:0 0 11px 0;border-bottom:1.3px solid #ede2d5;font-size:1rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;}
+    .menu-category{grid-column:1/-1;font-size:.97rem;color:#a85829;margin:18px 0 7px 0;letter-spacing:.02em;text-transform:uppercase;}
+    @media(max-width:600px){.menu-grid{grid-template-columns: 1fr;gap:9px;}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="cafe2.html" class="logo">Placeholder Cafe</a>
+  <ul class="nav-links">
+    <li><a href="cafe2-about.html">About</a></li>
+    <li><a href="cafe2-gallery.html">Gallery</a></li>
+    <li><a href="cafe2-menu.html">Menu</a></li>
+    <li><a href="cafe2-booking.html">Booking</a></li>
+    <li><a href="cafe2-contact.html">Contact</a></li>
+    <li><a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+</nav>
+<main>
+<section class="hero">
+  <h1>Menu</h1>
+  <p>Coffee, teas, and simple brunches. Honest ingredients. Always delicious.</p>
+</section>
+<div class="menu-grid">
+  <div class="menu-category">Coffee</div>
+  <div class="menu-item"><span>Espresso</span><span>£2</span></div>
+  <div class="menu-item"><span>Americano</span><span>£2.2</span></div>
+  <div class="menu-item"><span>Latte</span><span>£2.5</span></div>
+  <div class="menu-item"><span>Cappuccino</span><span>£2.5</span></div>
+  <div class="menu-item"><span>Flat White</span><span>£2.7</span></div>
+  <div class="menu-category">Tea & More</div>
+  <div class="menu-item"><span>English Breakfast</span><span>£2</span></div>
+  <div class="menu-item"><span>Earl Grey</span><span>£2</span></div>
+  <div class="menu-item"><span>Herbal Infusion</span><span>£2.1</span></div>
+  <div class="menu-item"><span>Matcha Latte</span><span>£3</span></div>
+  <div class="menu-category">Bites</div>
+  <div class="menu-item"><span>Almond Croissant</span><span>£2.8</span></div>
+  <div class="menu-item"><span>Banana Bread</span><span>£2.5</span></div>
+  <div class="menu-item"><span>Avocado Toast</span><span>£5</span></div>
+  <div class="menu-item"><span>Granola Pot</span><span>£4</span></div>
+</div>
+</main>
+<footer>
+  <span>&copy; 2025 Placeholder Cafe</span>
+  <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-footer"><i class="fab fa-instagram"></i></a>
+</footer>
+</body>
+</html>

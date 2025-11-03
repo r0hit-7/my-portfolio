@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Placeholder Cafe</title>
+  <link rel="stylesheet" href="cafe2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .booking-form{display:grid;gap:13px;max-width:320px;margin:0 auto;padding:29px 6px 18px 6px;}
+    .booking-form label{font-size:1rem;color:#7c7365;}
+    .booking-form input{width:100%;background:#f9f6e8;border:1.2px solid #e7dbbd;border-radius:7px;padding:10px 12px;margin-top:3px;transition:border .18s, box-shadow .16s;font-size:1rem;font-family:inherit;}
+    .booking-form input:focus{border-color:#a85829;box-shadow:0 0 0 2px #a8582922;outline:none;}
+    .booking-form button{background:#fff;color:#a85829;font-weight:600;border:1.5px solid #a85829;padding:10px 23px;border-radius:22px;font-size:1rem;cursor:pointer;transition:background .13s;}
+    .booking-form button:hover,.booking-form button:focus{background:#ffeedd;outline:none;}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="cafe2.html" class="logo">Placeholder Cafe</a>
+  <ul class="nav-links">
+    <li><a href="cafe2-about.html">About</a></li>
+    <li><a href="cafe2-gallery.html">Gallery</a></li>
+    <li><a href="cafe2-menu.html">Menu</a></li>
+    <li><a href="cafe2-booking.html">Booking</a></li>
+    <li><a href="cafe2-contact.html">Contact</a></li>
+    <li><a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+</nav>
+<main>
+  <section class="hero">
+    <h1>Booking</h1>
+    <p>Reserve your spot. We look forward to welcoming you!</p>
+  </section>
+  <form class="booking-form" autocomplete="off" aria-label="Booking Form">
+    <label>Name<input type="text" required name="name"></label>
+    <label>Email<input type="email" required name="email"></label>
+    <label>Phone<input type="tel" required name="phone"></label>
+    <label>Date<input type="date" required name="date"></label>
+    <label>Time<input type="time" required name="time"></label>
+    <label>Guests<input type="number" min="1" max="12" required name="guests"></label>
+    <button type="submit">Book Now</button>
+  </form>
+</main>
+<footer>
+  <span>&copy; 2025 Placeholder Cafe</span>
+  <a href="https://instagram.com" target="_blank" rel="noopener" class="insta-footer"><i class="fab fa-instagram"></i></a>
+</footer>
+</body>
+</html>
