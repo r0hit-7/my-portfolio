@@ -35,8 +35,205 @@
   --border-color: #4b5563;
 }
 
-html {
-  scroll-behavior: smooth;
+html { scroll-behavior: smooth; }
+
+/* CafeMotif - Only target cafe.html via body[data-cafe-page] */
+body[data-cafe-page] {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #ece6d9; /* soft creamy white */
+  color: #312d25; /* deep brown */
+}
+body[data-cafe-page] header {
+  background: linear-gradient(rgba(35,36,32,0.70),rgba(35,36,32,0.25)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  color: #f5e4ca;
+  height: 320px;
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  position: relative;
+}
+body[data-cafe-page] .cafe-logo {
+  font-size:1.63rem;font-weight:700;
+  letter-spacing:0.1em;
+  color: #3a5335;
+  font-family: 'Playfair Display', serif;
+}
+body[data-cafe-page] nav {
+  position: absolute;
+  top: 20px; left: 40px; right: 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 2;
+}
+body[data-cafe-page] nav ul {
+  display: flex; gap: 28px;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+body[data-cafe-page] nav ul li a{
+  text-decoration: none;
+  color: #ffeeb9;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+body[data-cafe-page] nav ul li a:hover{color: #cbc46a;}
+body[data-cafe-page] .hero-title {
+  margin-top: 70px;
+  font-size: 2.7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: #e0c48a;
+  text-shadow: 0 2px 20px #19140544;
+  font-family: 'Playfair Display', serif;
+}
+body[data-cafe-page] .section {
+  max-width: 1100px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+body[data-cafe-page] .intro-headline {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3a5335;
+  margin-bottom: 12px;
+  line-height: 1.12;
+  font-family: 'Playfair Display', serif;
+}
+body[data-cafe-page] .intro-text {
+  font-size: 1.14rem;
+  color: #493b20;
+  margin-bottom: 32px;
+}
+body[data-cafe-page] .features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin-bottom: 44px;
+}
+body[data-cafe-page] .feature-btn {
+  background: #fffceb;
+  border-radius: 38px;
+  border: 1.6px solid #bdae91;
+  color: #3a5335;
+  font-size: .97rem;
+  padding: 8px 22px;
+  margin-right: 0;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 4px #47390810;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.17s, color 0.18s;
+}
+body[data-cafe-page] .feature-btn:hover {background: #cbc46a;color:#312d25;}
+body[data-cafe-page] .feature-media {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 24px #1e211815;
+}
+body[data-cafe-page] .feature-media img {
+  display: block;
+  width: 100%;
+  min-height:220px;
+  background:#d9caa1;
+}
+body[data-cafe-page] .feature-cards {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  margin-top: 36px;
+}
+body[data-cafe-page] .card {
+  border-radius: 16px;
+  background: #fff8ee;
+  box-shadow: 0 2px 18px 1px #ad836640;
+  padding: 18px 18px 14px 18px;
+  display: flex; flex-direction: column;
+  border: 1px solid #e3d7bd;
+}
+body[data-cafe-page] .card-img {
+  border-radius: 12px;
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  background:#e9daae;
+}
+body[data-cafe-page] .card-title {
+  font-size: 1.14rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+  color: #453D31;
+  font-family: 'Playfair Display', serif;
+}
+body[data-cafe-page] .card-desc {
+  font-size: 0.99rem;
+  color: #5d564d;
+  flex: 1;
+}
+body[data-cafe-page] .card-meta {
+  display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 1rem;
+}
+body[data-cafe-page] .experience-section {
+  background: #26311f;
+  color: #f5e4ca;
+  border-radius: 26px;
+  margin-top: 62px;
+  text-align: center;
+  padding: 43px 10px 34px 10px;
+  border: 1.5px solid #dbc487;
+}
+body[data-cafe-page] .stats {
+  margin-top: 28px; display: flex; justify-content: center; gap: 52px; flex-wrap: wrap;
+}
+body[data-cafe-page] .stat {
+  font-size: 2rem; font-weight: 600; letter-spacing: 0.01em;
+}
+body[data-cafe-page] .stat-label {
+  font-size: 1rem; font-weight: 470; color: #cbc46a; margin-top: 2px;
+}
+body[data-cafe-page] .signup-section {
+  margin-top: 60px;
+  border-radius: 36px;
+  background: linear-gradient(rgba(166,143,98,0.56),rgba(44,55,41,0.72)), url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  color: #f5e4ca;
+  text-align: center;
+  padding: 48px 13px 48px 13px;
+  box-shadow: 0 8px 60px 4px #916c2a20;
+}
+body[data-cafe-page] .signup-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 3px 18px #59481b52;
+  font-family: 'Playfair Display', serif;
+}
+body[data-cafe-page] .signup-form {
+  margin-top: 12px;
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 9px;
+}
+body[data-cafe-page] .signup-form input[type=email]{
+  border: none; border-radius: 99px; padding: 12px 22px; font-size: 1rem; width:240px; background:#fff8ee;color:#312d25;
+}
+body[data-cafe-page] .signup-form button {
+  background: #cbc46a; color: #312d25;
+  border: none; border-radius: 99px; padding: 12px 24px; font-weight: 600; font-size: 1rem; cursor: pointer;
+  transition: background 0.21s;
+}
+body[data-cafe-page] .signup-form button:hover {background: #ffeeb9;}
+body[data-cafe-page] footer {
+  max-width: 1200px; margin: 42px auto 14px auto; padding: 0 16px; color: #816d4a;
+  font-size: 0.97rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;
+}
+@media (max-width:700px){
+  body[data-cafe-page] nav ul{gap:12px;}
+  body[data-cafe-page] .hero-title{font-size:1.58rem;}
+  body[data-cafe-page] .intro-headline{font-size:1.1rem;}
+  body[data-cafe-page] .section{padding:0 5px;}
+  body[data-cafe-page] .feature-cards{grid-template-columns:1fr;}
+  body[data-cafe-page] .experience-section{padding:22px 4px;}
+  body[data-cafe-page] .signup-section{padding:18px 3px;}
+  body[data-cafe-page] footer{padding:0 3px;}
 }
 
 body {
@@ -1057,3 +1254,99 @@ section {
 .contact-card {
   animation: fadeInUp 0.6s ease-out;
 }
+
+body[data-cafe-page] .cafe-navbar {
+  position: sticky;
+  top: 0; left: 0; right: 0;
+  background: rgba(44,55,41,0.92);
+  box-shadow: 0 3px 20px 0 rgba(34,30,6,0.18);
+  border-bottom: 2.5px solid #bdae91;
+  z-index: 1010;
+  transition: background 0.23s, box-shadow 0.23s;
+}
+body[data-cafe-page] .cafe-navbar.scrolled {
+  background: rgba(44,55,41,1);
+  box-shadow: 0 4px 22px #19140533;
+}
+body[data-cafe-page] .nav-container {
+  display: flex;align-items: center;justify-content: space-between;max-width:1100px;margin:0 auto;padding:0 12px;height:58px;
+}
+body[data-cafe-page] .nav-menu {
+  display: flex;gap:25px;list-style:none;
+}
+body[data-cafe-page] .nav-menu a {
+  color:#ffeeb9;font-size:1rem;font-weight:600;letter-spacing:0.03em;text-decoration: none;position:relative;transition:color .17s;
+  padding: 5px 0;
+}
+body[data-cafe-page] .nav-menu a.active, body[data-cafe-page] .nav-menu a:focus {
+  color: #cbc46a;
+  border-bottom: 2px solid #cbc46a;
+}
+body[data-cafe-page] .hamburger {
+  display:none;background:transparent;border:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px 8px;
+}
+body[data-cafe-page] .hamburger span{display:block;width:27px;height:3px;background:#ffeeb9;border-radius:3px;transition: transform 0.23s, opacity 0.23s;}
+body[data-cafe-page] .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px);}
+body[data-cafe-page] .hamburger.active span:nth-child(2){opacity:0;}
+body[data-cafe-page] .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px);}
+@media (max-width:870px){
+ body[data-cafe-page] .nav-menu {position:fixed;top:58px;left:-100%;width:100vw;height:calc(100vh-58px);background:rgba(44,55,41,0.99);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;z-index:1120;transition:left .2s;}
+ body[data-cafe-page] .nav-menu.active {left:0;}
+ body[data-cafe-page] .hamburger{display:flex;z-index:1211;}
+}
+body[data-cafe-page] .hero-section {
+  position: relative; min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 44px 10px 50px 10px;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  z-index: 9;
+}
+body[data-cafe-page] .hero-overlay{
+  position:absolute;inset:0;background:linear-gradient(120deg,#3a5335cc 0%,#f8eba0b0 100%);z-index:1;}
+body[data-cafe-page] .hero-content {position:relative;z-index:2;max-width:650px;text-align:center;color:#fdf8ea;}
+body[data-cafe-page] .hero-title {color:#ffc95b;text-shadow:0 2px 14px #32300c7d;font-size:2.3rem;margin-bottom:14px;font-weight:900;font-family:'Playfair Display',serif;letter-spacing:0.02em;}
+body[data-cafe-page] .hero-desc{font-size:1.11rem;line-height:1.6;color:#fff9ef;margin-bottom:18px;}
+body[data-cafe-page] .hero-social a{display:inline-block;margin:0 4px;color:#e0c48a;background:#26311f40;border-radius:50%;padding:8px;font-size:1.15rem;transition:background 0.16s, color 0.16s;vertical-align:middle;}
+body[data-cafe-page] .hero-social a:hover{color:#3a5335;background:#ffeeb9;}
+body[data-cafe-page] .feature-descs {display: flex;gap:24px;flex-wrap:wrap;margin-top:9px;}
+body[data-cafe-page] .feature-desc {flex:1;min-width:230px;}
+
+body[data-cafe-page] .modal-overlay {position:fixed;z-index:1240;inset:0;background:rgba(45,37,23,0.5);justify-content:center;align-items:center;display:none;transition:background 0.22s;}
+body[data-cafe-page] .modal-overlay[aria-hidden="true"]{display:none;}
+body[data-cafe-page] .modal-overlay[aria-hidden="false"]{display:flex;}
+body[data-cafe-page] .modal {
+  background:#fff;
+  border-radius:20px;
+  box-shadow: 0 6px 56px #0004;
+  min-width:290px; max-width:98vw; width:335px;
+  padding: 24px 20px 18px 20px;
+  position:relative;
+}
+body[data-cafe-page] .modal h3 {font-size:1.23rem;color:#363011;margin-bottom:8px;font-weight:700;}
+body[data-cafe-page] .order-form label {display:block;font-size:1rem;margin-bottom:8px;color:#493b20;}
+body[data-cafe-page] .order-form input,body[data-cafe-page] .order-form textarea {width:100%;max-width:100%;padding: 10px 12px;background:#f9f6e8;border:1.4px solid #e7dbbd;border-radius:8px;margin-top:4px;margin-bottom:12px;transition:border 0.19s, box-shadow 0.19s;font-size:1rem;font-family: inherit;}
+body[data-cafe-page] .order-form input:focus,body[data-cafe-page] .order-form textarea:focus{border:1.7px solid #cbc46a;outline:none;box-shadow:0 0 0 2px #cbc46a22;}
+body[data-cafe-page] .modal-actions {display:flex;gap:16px;margin-top:6px;justify-content:flex-end;}
+
+body[data-cafe-page] .cafe-toast {z-index:12390;}
+@media (max-width:535px){body[data-cafe-page] .modal{min-width:98vw;width:99vw;padding:15px 10px;}}
+
+body[data-cafe-page] .feature-btn,
+body[data-cafe-page] button.feature-btn,
+body[data-cafe-page] input,
+body[data-cafe-page] textarea {
+  transition: box-shadow .19s, border .19s, background .18s, color .18s;
+  outline: none;
+}
+body[data-cafe-page] .feature-btn:focus,body[data-cafe-page] input:focus,body[data-cafe-page] textarea:focus {
+  box-shadow: 0 0 0 2px #cbc46a7a;border-color:#cbc46a;
+}
+body[data-cafe-page] .footer-social a{
+  color:#816d4a;display:inline-block;margin:2px 5px;font-size:1.22rem;transition:color 0.18s;}
+body[data-cafe-page] .footer-social a:hover{color:#cbc46a;}
+body[data-cafe-page] footer a {color:inherit;text-decoration:underline dotted #cdae6b10;transition:color .14s;}
+body[data-cafe-page] footer a:hover,
+body[data-cafe-page] footer a:focus{color:#cbc46a;}
+body[data-cafe-page] .booking-form {display:grid;gap:13px;max-width:410px;margin:0 auto;}
+body[data-cafe-page] .booking-form label {font-size:1rem;display:block;color:#493b20;}
+body[data-cafe-page] .booking-form input,body[data-cafe-page] .booking-form textarea {
+width:100%;background:#f9f6e8;border:1.2px solid #e7dbbd;border-radius:7px;padding:10px 12px;transition:border .19s, box-shadow .19s;font-size:1rem;font-family:inherit;margin-top:3px;}
+body[data-cafe-page] .booking-form input:focus,body[data-cafe-page] .booking-form textarea:focus{border-color:#cbc46a;box-shadow:0 0 0 2px #cbc46a17;}
